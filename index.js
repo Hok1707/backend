@@ -10,7 +10,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(loggerMiddleware);
 app.use(cors({
-  origin:'http://localhost:5173',
+  origin: ['https://expense-tracker-bice-kappa.vercel.app', 'http://localhost:5173'],
+  credentials: true
 }));
 
 

@@ -1,0 +1,9 @@
+{
+    "routes": [
+      { "src": "/api/v1/auth", "dest": "/src/routes/authRoute.js" },
+      { "src": "/api/v1/dashboard", "dest": "/src/routes/dashboardRoute.js" },
+      { "src": "/api/v1/transaction", "dest": "/src/routes/transactionRoute.js" },
+      { "src": "/(.*)", "dest": "/src/server.js" }
+    ]
+  }
+  
