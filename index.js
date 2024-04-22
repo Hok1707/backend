@@ -11,10 +11,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(loggerMiddleware);
 app.use(
   cors({
-    origin: "https://expense-tracker-bice-kappa.vercel.app",
-    allowedHeaders: ['*'],
+    origin: [
+      "https://expense-tracker-bice-kappa.vercel.app",
+      "http://localhost:5173",
+    ],
+    allowedHeaders: [
+      "Origin",
+      "X-Requested-With",
+      "Content-Type",
+      "Accept",
+      "Authorization",
+    ],
     methods: "GET,HEAD,PUT,POST,DELETE",
-    preflightContinue: true,
+    preflightContinue: false,
     optionsSuccessStatus: 204,
   })
 );
