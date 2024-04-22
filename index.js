@@ -3,20 +3,23 @@ const app = express();
 const cors = require("cors");
 const loggerMiddleware = require("./src/middleware/logMiddleware");
 require("./src/config/db");
-require('dotenv').config();
+require("dotenv").config();
 
 const port = process.env.PORT || 6776;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(loggerMiddleware);
-app.use(cors({
-  origin: ['https://backend-api-ashen.vercel.app', 'http://localhost:5173'],
-  credentials: true
-}));
-
+app.use(
+  cors({
+    origin: "https://expense-tracker-bice-kappa.vercel.app",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+  })
+);
 
 const authRoute = require("./src/routes/authRoute");
-const dashboardRoute = require('./src/routes/dashboardRoute')
+const dashboardRoute = require("./src/routes/dashboardRoute");
 const transactionRoute = require("./src/routes/transactionRoute");
 
 app.use("/api/v1/auth", authRoute);
