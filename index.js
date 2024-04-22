@@ -14,7 +14,7 @@ app.use(
     origin: "https://expense-tracker-bice-kappa.vercel.app",
     allowedHeaders: ['*'],
     methods: "GET,HEAD,PUT,POST,DELETE",
-    preflightContinue: false,
+    preflightContinue: true,
     optionsSuccessStatus: 204,
   })
 );
