@@ -1,0 +1,10 @@
+{"error":"userID is not defined","level":"error","message":"Error doing transaction"}
+{"error":"Transaction validation failed: user: Path `user` is required.","level":"error","message":"Error doing transaction"}
+{"error":"Transaction validation failed: user: Path `user` is required.","level":"error","message":"Error doing transaction"}
+{"error":"Transaction validation failed: user: Path `user` is required.","level":"error","message":"Error doing transaction"}
+{"error":"Transaction validation failed: user: Path `user` is required.","level":"error","message":"Error doing transaction"}
+{"error":"Cast to date failed for value \"Invalid Date\" (type Date) at path \"date\" for model \"Transaction\"","level":"error","message":"Error getting transactions by day"}
+{"error":"Cast to date failed for value \"Invalid Date\" (type Date) at path \"date\" for model \"Transaction\"","level":"error","message":"Error getting transactions by day"}
+{"code":11000,"errmsg":"E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"hengkimhok07@gmail.com\" }","index":0,"keyPattern":{"email":1},"keyValue":{"email":"hengkimhok07@gmail.com"},"level":"error","message":"Error signing user"}
+{"code":11000,"errmsg":"E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"hengkimhok07@gmail.com\" }","index":0,"keyPattern":{"email":1},"keyValue":{"email":"hengkimhok07@gmail.com"},"level":"error","message":"Error signing user"}
+{"code":11000,"errmsg":"E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \"hengkimhok07@gmail.com\" }","index":0,"keyPattern":{"email":1},"keyValue":{"email":"hengkimhok07@gmail.com"},"level":"error","message":"Error signing user"}
