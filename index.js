@@ -35,6 +35,9 @@ const transactionRoute = require("./src/routes/transactionRoute");
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/dashboard", dashboardRoute);
 app.use("/api/v1/transaction", transactionRoute);
+app.use("/", (req, res) => {
+  res.send("Hello World!");
+});
 
 app.listen(port, () => {
   console.log(`app running on port ${port}`);
