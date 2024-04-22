@@ -12,7 +12,8 @@ app.use(loggerMiddleware);
 app.use(
   cors({
     origin: "https://expense-tracker-bice-kappa.vercel.app",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    allowedHeaders: ['*'],
+    methods: "GET,HEAD,PUT,POST,DELETE",
     preflightContinue: false,
     optionsSuccessStatus: 204,
   })
