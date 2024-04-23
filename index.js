@@ -10,33 +10,31 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(loggerMiddleware);
 
-const cors = require("cors");
-const corsOpts = {
-  origin: "*",
-  credentials: true,
-  methods: ["GET", "POST", "HEAD", "PUT", "PATCH", "DELETE"],
-  allowedHeaders: ["Content-Type"],
-  exposedHeaders: ["Content-Type"],
+const whitelist = [
+  "https://expense-tracker-bice-kappa.vercel.app",
+  "http://localhost:5173",
+];
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  allowedHeaders: [
+    "Origin",
+    "X-Requested-With",
+    "Content-Type",
+    "Accept",
+    "Authorization",
+  ],
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
 };
-app.use(cors(corsOpts));
-// app.use(
-//   cors({
-//     origin: [
-//       "https://expense-tracker-bice-kappa.vercel.app",
-//       "http://localhost:5173",
-//     ],
-//     allowedHeaders: [
-//       "Origin",
-//       "X-Requested-With",
-//       "Content-Type",
-//       "Accept",
-//       "Authorization",
-//     ],
-//     methods: "GET,HEAD,PUT,POST,DELETE",
-//     preflightContinue: false,
-//     optionsSuccessStatus: 204,
-//   })
-// );
+
+app.use(cors(corsOptions));
 
 const authRoute = require("./src/routes/authRoute");
 const dashboardRoute = require("./src/routes/dashboardRoute");
